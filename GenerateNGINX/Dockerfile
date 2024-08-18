@@ -22,7 +22,7 @@ RUN apk update && apk upgrade --available && sync\
     && apk add --no-cache nano bash wget nginx \
     tzdata zip unzip openssl nginx-mod-http-xslt-filter \
     vim curl nginx-mod-http-fancyindex \
-	&& [ $TARGETPLATFORM == "linux/amd64" ] && { ARCH_TYPE="linux-64"; } || { ARCH_TYPE="linux-arm64-v8a"; }\
+    && [ $TARGETPLATFORM == "linux/amd64" ] && { ARCH_TYPE="linux-64"; } || { ARCH_TYPE="linux-arm64-v8a"; }\
     && NGINXUI_VERSION=$(curl -s https://api.github.com/repos/0xJacky/nginx-ui/releases/latest|grep tag_name | cut -d '"' -f 4|sed 's/v//g' | sed s/"release-"//)\
     && wget https://github.com/0xJacky/nginx-ui/releases/download/v${NGINXUI_VERSION}/nginx-ui-${ARCH_TYPE}.tar.gz\
     && tar -xvzf nginx-ui-${ARCH_TYPE}.tar.gz && rm -rf *.md && chmod 777 nginx-ui\
