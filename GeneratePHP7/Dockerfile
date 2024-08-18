@@ -40,9 +40,9 @@ RUN curl -sS https://getcomposer.org/installer -o composer-setup.php\
     && rm -rf composer-setup.php
 
 # Copy EntryPoint Configuration
-COPY php.ini /etc/php83/php.ini
-COPY www.conf /etc/php83/php-fpm.d/www.conf
-COPY 50_xdebug.ini /etc/php83/conf.d/50_xdebug.ini
+COPY php.ini /etc/php7/php.ini
+COPY www.conf /etc/php7/php-fpm.d/www.conf
+COPY 50_xdebug.ini /etc/php7/conf.d/50_xdebug.ini
 COPY start.sh /start.sh
 
 # Clear package lists
