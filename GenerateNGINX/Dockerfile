@@ -60,9 +60,9 @@ RUN rm -rf /etc/nginx && unzip -o /etc/nginx.zip -d /etc/ \
     && chown -h 1000:1000 /var/log/nginx \
     && chown 1000:1000 /etc/localtime \
     && chown 1000:1000 /etc/timezone \
-    && chown -R 1000:1000 /var/www \
     && unzip -o /default.zip -d /var/www/html/ \
     && rm -rf /default.zip \
+    && chown -R 1000:1000 /var/www \
     && chmod 777 /start.sh \
     && chown 1000:1000 /bin/nginx-ui \
     && chown 1000:1000 /start.sh
