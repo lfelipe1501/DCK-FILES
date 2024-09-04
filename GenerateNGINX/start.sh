@@ -25,5 +25,13 @@ if [ -z "$(ls /etc/nginx-ui)" ]; then
     echo ""
 fi
 
+if [ -d /var/www/html/pma ]; then
+    ln -sf /etc/nginx/sites-available/pma.conf /etc/nginx/sites-enabled/pma.conf
+fi
+
+if [ -d /var/www/html/pyapp ]; then
+    ln -sf /etc/nginx/sites-available/pyapp.conf /etc/nginx/sites-enabled/pyapp.conf
+fi
+
 nginx &
 nginx-ui --config /etc/nginx-ui/app.ini

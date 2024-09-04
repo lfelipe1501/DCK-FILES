@@ -33,6 +33,7 @@ RUN apk update && apk upgrade --available && sync\
     && rm -rf /var/cache/apk/*
 
 COPY nginx.zip /etc/nginx.zip
+COPY default.zip /default.zip
 
 # Copy EntryPoint Configuration
 COPY start.sh /start.sh
@@ -60,6 +61,8 @@ RUN rm -rf /etc/nginx && unzip -o /etc/nginx.zip -d /etc/ \
     && chown 1000:1000 /etc/localtime \
     && chown 1000:1000 /etc/timezone \
     && chown -R 1000:1000 /var/www \
+    && unzip -o /default.zip -d /var/www/html/ \
+    && rm -rf /default.zip \
     && chmod 777 /start.sh \
     && chown 1000:1000 /bin/nginx-ui \
     && chown 1000:1000 /start.sh
