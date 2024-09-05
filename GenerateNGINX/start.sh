@@ -26,11 +26,15 @@ if [ -z "$(ls /etc/nginx-ui)" ]; then
 fi
 
 if [ -d /var/www/html/pma ]; then
+  if ! [ -f /etc/nginx/sites-enabled/pma.conf ]; then
     ln -sf /etc/nginx/sites-available/pma.conf /etc/nginx/sites-enabled/pma.conf
+  fi
 fi
 
 if [ -d /var/www/html/pyapp ]; then
+  if ! [ -f /etc/nginx/sites-enabled/pyapp.conf ]; then
     ln -sf /etc/nginx/sites-available/pyapp.conf /etc/nginx/sites-enabled/pyapp.conf
+  fi
 fi
 
 nginx &
