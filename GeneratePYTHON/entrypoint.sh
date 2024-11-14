@@ -17,15 +17,15 @@ if [ -d $dir ]; then
 	echo "Iniciando APP..."
 	echo ""
 else
-	cd /app\
-	&& python3 -m venv venv\
-	&& . venv/bin/activate\
-	&& pip install -r requirements.txt\
+    cd /app\
+    && python3 -m venv venv\
+    && . venv/bin/activate\
+    && pip install -r requirements.txt\
     && echo ""\
-	&& python manage.py migrate\
-	; python manage.py collectstatic --noinput\
+    && python manage.py migrate\
+    ; python manage.py collectstatic --noinput\
     ; echo ""\
-	&& pip install uwsgi
+    && pip install uwsgi
 fi
 
 cd /app && . venv/bin/activate\
