@@ -19,7 +19,7 @@ RUN addgroup -g 1000 nginx\
 
 # Install php and prepare
 RUN apk update && apk upgrade --available && sync\
-    && apk add --no-cache nano bash wget nginx \
+    && apk add --no-cache nano bash wget nginx openrc\
     tzdata zip unzip openssl nginx-mod-http-xslt-filter \
     vim curl nginx-mod-http-fancyindex \
     && [ $TARGETPLATFORM == "linux/amd64" ] && { ARCH_TYPE="linux-64"; } || { ARCH_TYPE="linux-arm64-v8a"; }\
