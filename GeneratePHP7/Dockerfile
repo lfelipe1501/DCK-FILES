@@ -22,8 +22,8 @@ RUN addgroup -g 1000 phpusr\
 RUN apk update && apk upgrade --available && sync\
     && apk add --no-cache nano bash vim curl wget sqlite\
     tzdata zip unzip openssl busybox-extras linux-headers\
-    php7 php7-fpm php7-opcache php7-pecl-xdebug\
-    php7-zlib php7-curl php7-session php7-json\
+    php7 php7-fpm php7-opcache php7-pecl-xdebug php7-xmlreader\
+    php7-zlib php7-curl php7-session php7-json php7-simplexml\
     php7-gd php7-exif php7-zip php7-mysqli supervisor\
     php7-pdo php7-iconv php7-fileinfo php7-xml php7-mcrypt\
     php7-common php7-intl php7-bcmath php7-dom php7-mbstring\
