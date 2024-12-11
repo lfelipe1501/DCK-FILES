@@ -27,7 +27,7 @@ RUN apk update && apk upgrade --available && sync\
     php7-gd php7-exif php7-zip php7-mysqli supervisor\
     php7-pdo php7-iconv php7-fileinfo php7-xml php7-mcrypt\
     php7-common php7-intl php7-bcmath php7-dom php7-mbstring\
-    php7-pdo_mysql php7-xmlwriter php7-phar php7-ctype\
+    php7-pdo_mysql php7-xmlwriter php7-phar php7-ctype php7-tokenizer\
     php7-soap php7-sockets php7-tidy php7-pecl-imagick\
     php7-pear php7-dev gcc musl-dev make ghostscript-fonts ghostscript\
     && ln -sf /usr/bin/php7 /usr/bin/php\
