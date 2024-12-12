@@ -22,17 +22,17 @@ RUN addgroup -g 1000 phpusr\
 RUN apk update && apk upgrade --available && sync\
     && apk add --no-cache nano bash vim curl wget sqlite\
     tzdata zip unzip openssl busybox-extras linux-headers\
-    php83 php83-fpm php83-opcache php83-pecl-xdebug\
-    php83-zlib php83-curl php83-session php83-json\
-    php83-gd php83-exif php83-zip php83-mysqli supervisor\
-    php83-pdo php83-iconv php83-fileinfo php83-xml\
-    php83-common php83-intl php83-bcmath php83-dom\
-    php83-pdo_mysql php83-xmlwriter php83-phar php83-ctype\
-    php83-soap php83-sockets php83-tidy php83-pecl-imagick\
-    php83-pgsql php83-sodium php83-tokenizer php83-xmlreader\
-    php83-pdo_pgsql php83-simplexml php83-mbstring\
-    php83-pear php83-dev gcc musl-dev make ghostscript-fonts ghostscript\
-    && ln -sf /usr/bin/php83 /usr/bin/php\
+    php84 php84-fpm php84-opcache php84-pecl-xdebug\
+    php84-zlib php84-curl php84-session php84-json\
+    php84-gd php84-exif php84-zip php84-mysqli supervisor\
+    php84-pdo php84-iconv php84-fileinfo php84-xml\
+    php84-common php84-intl php84-bcmath php84-dom\
+    php84-pdo_mysql php84-xmlwriter php84-phar php84-ctype\
+    php84-soap php84-sockets php84-tidy php84-pecl-imagick\
+    php84-pgsql php84-sodium php84-tokenizer php84-xmlreader\
+    php84-pdo_pgsql php84-simplexml php84-mbstring\
+    php84-pear php84-dev gcc musl-dev make ghostscript-fonts ghostscript\
+    && ln -sf /usr/bin/php84 /usr/bin/php\
     && rm -rf /var/lib/apt/lists/* && rm -rf /var/cache/apt/*\
     && rm -rf /tmp/{.}* /tmp/*\
     && rm -rf /var/cache/apk/*
@@ -43,9 +43,9 @@ RUN curl -sS https://getcomposer.org/installer -o composer-setup.php\
     && rm -rf composer-setup.php
 
 # Copy EntryPoint Configuration
-COPY php.ini /etc/php83/php.ini
-COPY www.conf /etc/php83/php-fpm.d/www.conf
-COPY 50_xdebug.ini /etc/php83/conf.d/50_xdebug.ini
+COPY php.ini /etc/php84/php.ini
+COPY www.conf /etc/php84/php-fpm.d/www.conf
+COPY 50_xdebug.ini /etc/php84/conf.d/50_xdebug.ini
 COPY start.sh /start.sh
 
 # Clear package lists
