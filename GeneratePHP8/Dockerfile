@@ -2,16 +2,16 @@ FROM alpine:latest
 
 LABEL org.opencontainers.image.maintainer="Luis Felipe Sanchez <lfelipe1501@gmail.com>"\
       org.opencontainers.image.authors="lfsystems Community"\
-      org.opencontainers.image.description="PHP 8.3 Alpine BASE for LEMP Stack"\
+      org.opencontainers.image.description="PHP 8.4 Alpine BASE for LEMP Stack"\
       org.opencontainers.image.documentation="https://github.com/lfelipe1501/LEMPDocker"\
-      org.opencontainers.image.title="PHP 8.3 LEMP"\
+      org.opencontainers.image.title="PHP 8.4 LEMP"\
       org.opencontainers.image.vendor="lfsystems Community"\
-      org.opencontainers.image.version="8.3"
+      org.opencontainers.image.version="8.4"
 
 # Set Variables
 ARG VPHP
 ENV TZ=Etc/UTC\
-    VPHP=83
+    VPHP=84
 
 # Create user to protect container
 RUN addgroup -g 1000 phpusr\
