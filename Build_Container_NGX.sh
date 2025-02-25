@@ -10,7 +10,7 @@
 echo ""
 echo "Generando Contenedor de NGINX + UI"
 echo ""
-docker buildx build --push --platform linux/arm64,linux/amd64 -t lfsys/nginx:latest GenerateNGINX/.
+docker buildx build --push --platform linux/arm64,linux/amd64 --output type=image,compression=zstd -t lfsys/nginx:latest GenerateNGINX/.
 echo ""
 
 echo ""

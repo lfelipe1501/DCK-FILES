@@ -10,7 +10,7 @@
 echo ""
 echo "Generando Contenedor de PYTHON 3"
 echo ""
-docker buildx build --push --platform linux/arm64,linux/amd64 -t lfsys/python:latest GeneratePYTHON/.
+docker buildx build --push --platform linux/arm64,linux/amd64 -t lfsys/python:latest GeneratePYTHON/. --output type=image,compression=zstd
 echo ""
 
 echo ""
