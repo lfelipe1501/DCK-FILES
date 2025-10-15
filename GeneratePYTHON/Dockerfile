@@ -34,6 +34,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y openssl\
     && chmod -R 777 /var/run\
     && chown -R 1000:1000 /var/cache\
     && chown 1000:1000 /etc/localtime\
+	&& touch /etc/timezone\
     && chown 1000:1000 /etc/timezone\
     && chmod 777 /entrypoint.sh\
     && chown 1000:1000 /entrypoint.sh
